@@ -1,0 +1,18 @@
+# Ignore Drupal core, contrib modules, and generated files
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/sites/default/files/
+
+# Ignore vendor dependencies
+/vendor/
+
+# Ignore config sync if it's outside web root (adjust if needed)
+/config/sync/*
+
+# Ignore DDEV / local environment files
+.ddev/
+.env
+.idea/
+.vscode/
+

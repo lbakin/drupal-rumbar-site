@@ -1,0 +1,12 @@
+global:
+  css:
+    theme:
+      css/base.css: {}
+
+hero:
+  css:
+    theme:
+      css/components/hero.css: {}
+  js:
+    js/hero-parallax.js: {}
+

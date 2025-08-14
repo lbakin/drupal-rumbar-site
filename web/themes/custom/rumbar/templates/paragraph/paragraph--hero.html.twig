@@ -1,0 +1,36 @@
+{# themes/custom/rumbar/templates/paragraph/paragraph--hero.html.twig #}
+{{ attach_library('rumbar/hero') }}
+
+{# Resolve background image from Media (image) #}
+{% set media = paragraph.field_bg_media.entity %}
+{% set isImage = media and media.bundle() == 'image' %}
+{% set img = isImage ? media.field_media_image.entity : null %}
+{% set imgUrl = img ? file_url(img.uri.value) : null %}
+
+<section class="rb-hero">
+  <div class="rb-hero__bg">
+    {% if imgUrl %}
+      <div class="rb-hero__image" style="background-image:url('{{ imgUrl }}');"></div>
+    {% endif %}
+    <div class="rb-hero__overlay" aria-hidden="true"></div>
+  </div>
+
+  <div class="rb-hero__inner container">
+    {% if paragraph.field_kicker.value %}
+      <p class="rb-hero__kicker">hardcoded kicker value</p>
+    {% endif %}
+
+    {% if paragraph.field_headline.value %}
+      <h1 class="rb-hero__title">{{ paragraph.field_headline.value }}</h1>
+    {% endif %}
+
+    {% if paragraph.field_subheadline.value %}
+      <p class="rb-hero__sub">{{ paragraph.field_subheadline.value }}</p>
+    {% endif %}
+
+    <div class="rb-hero__ctas" role="group" aria-label="Primary actions">
+      {{ content.field_cta_primary }}
+      {{ content.field_cta_secondary }}
+    </div>
+  </div>
+</section>
