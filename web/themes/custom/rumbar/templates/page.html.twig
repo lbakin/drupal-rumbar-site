@@ -1,0 +1,29 @@
+{# themes/custom/rumbar/templates/page.html.twig #}
+{{ attach_library('rumbar/header') }}
+
+<header class="rb-header" role="banner">
+  <div class="rb-branding">
+    <h1 class="rb-site-title">Rum  <div class="rb-logo">
+      {% if site_logo %}
+        <a href="{{ path('<front>') }}" rel="home">
+          <img src="{{ site_logo }}" alt="{{ site_name ?: 'Rum Bar' }}" />
+        </a>
+      {% endif %}
+    </div> Bar</h1>
+
+   
+  </div>
+
+  <nav class="rb-nav" role="navigation" aria-label="Primary">
+    {# This renders the block you’ll place into the "Primary menu" region in the UI #}
+    {{ page.primary_menu }}
+  </nav>
+</header>
+
+<main role="main">
+  {{ page.content }}
+</main>
+
+<footer class="rb-footer">
+  {{ page.footer }}
+</footer>

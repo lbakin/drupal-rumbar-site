@@ -2,11 +2,20 @@ global:
   css:
     theme:
       css/base.css: {}
-
+      css/colors.css: {}
+      css/style.css: {}
+ 
 hero:
-  css:
-    theme:
-      css/components/hero.css: {}
   js:
     js/hero-parallax.js: {}
+  dependencies:
+    - rumbar/global
+
+header:
+  css:
+    theme:
+      css/components/header.css: {}
+
+
+
 

@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function rumbar_preprocess_page(array &$variables) {
+  if (empty($variables['site_logo'])) {
+    $path = theme_get_setting('logo.path', 'rumbar'); // e.g. public://logo.png
+    if (!empty($path)) {
+      $variables['site_logo'] = \Drupal::service('file_url_generator')->generateString($path);
+    }
+  }
+}
