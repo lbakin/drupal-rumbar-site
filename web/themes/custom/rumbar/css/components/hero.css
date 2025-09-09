@@ -1,7 +1,7 @@
 .rb-hero {
   position: relative;
   min-height: 70vh;
-  color: #faf6ef;
+  color: var(--rb-text, #faf6ef);
   overflow: hidden;
 }
 
@@ -36,7 +36,7 @@
 .rb-hero__kicker {
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: #e2a43d;
+  color: currentColor;
   opacity: .95;
   margin: 0 0 .5rem;
   font-size: .9rem;
@@ -84,3 +84,22 @@
   transform: translateY(-1px);
   transition: transform .12s ease;
 }
+
+.rb-hero--align-left  .rb-hero__inner { text-align: left;  margin-inline: auto; margin-left: 15px; margin-right: auto; }
+.rb-hero--align-center .rb-hero__inner { text-align: center; margin-inline: auto; }
+.rb-hero--align-right .rb-hero__inner { text-align: right; margin-inline: auto; margin-left: auto; margin-right: 15px; }
+
+
+/* Base hero uses a local var; tones set it */
+.rb-hero { color: var(--rb-text, #faf6ef); }
+
+/* Make sure type actually inherits that color */
+.rb-hero :is(h1,h2,h3,h4,h5,h6,p,small,li,span) { color: currentColor; }
+.rb-hero .rb-hero__title { color: currentColor; } /* specificity bump for stubborn themes */
+
+/* Tone -> text color, pulling from :root tokens in colors.css */
+.rb-hero--tone-cream   { --rb-text: var(--color-bg); }        /* Cream */
+.rb-hero--tone-gold    { --rb-text: var(--color-secondary); } /* Gold Rum */
+.rb-hero--tone-emerald { --rb-text: var(--color-accent); }    /* Sea Green */
+.rb-hero--tone-dark-rum     { --rb-text: var(--color-primary); }   /* Deep Rum */
+.rb-hero--tone-coconut { --rb-text: #ffffff; }                /* pure white fallback */

@@ -2,12 +2,15 @@ global:
   css:
     theme:
       css/base.css: {}
-      css/colors.css: {}
+      css/colors.css: { weight: -10 }
       css/style.css: {}
  
 hero:
   js:
     js/hero-parallax.js: {}
+  css:
+    theme:
+      css/components/hero.css: {}
   dependencies:
     - rumbar/global
 

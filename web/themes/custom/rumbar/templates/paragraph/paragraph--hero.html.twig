@@ -7,7 +7,20 @@
 {% set img = isImage ? media.field_media_image.entity : null %}
 {% set imgUrl = img ? file_url(img.uri.value) : null %}
 
-<section{{ attributes.addClass('rb-hero', 'u-full-bleed') }}>
+{# Read values with safe fallbacks #}
+{% set tone_raw  = paragraph.field_tone.value ?: 'cream' %}
+{% set align_raw = paragraph.field_align.value ?: 'left' %}
+
+{# Make them CSS-class safe #}
+{% set tone  = tone_raw|clean_class %}
+{% set align = align_raw|clean_class %}
+
+<section{{ attributes.addClass(
+  'rb-hero',
+  'u-full-bleed',
+  'rb-hero--tone-' ~ tone,
+  'rb-hero--align-' ~ align
+) }}>
   <div class="rb-hero__bg">
     {% if imgUrl %}
       <div class="rb-hero__image" style="background-image:url('{{ imgUrl }}');"></div>
