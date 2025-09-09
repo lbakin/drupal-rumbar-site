@@ -1,0 +1,32 @@
+{# themes/custom/rumbar/templates/paragraph/paragraph--about-section.html.twig #}
+<section class="rb-about">
+  <div class="rb-about__inner">
+    <div class="rb-about__col rb-about__col--text">
+      {% if paragraph.field_section_title.value %}
+        <h2>{{ paragraph.field_section_title.value }}</h2>
+      {% endif %}
+      {% for item in paragraph.field_body_text %}
+        <p>{{ item.value }}</p>
+      {% endfor %}
+    </div>
+    {% set images = paragraph.field_images %}
+    <div class="rb-about__col rb-about__col--img">
+      {% if images|length > 0 and images[0].entity.field_media_image.entity %}
+        <img 
+          src="{{ file_url(images[0].entity.field_media_image.entity.uri.value) }}"
+          alt="{{ images[0].entity.field_media_image.alt }}"
+          class="rb-about__img"
+        />
+      {% endif %}
+    </div>
+    <div class="rb-about__col rb-about__col--img">
+      {% if images|length > 1 and images[1].entity.field_media_image.entity %}
+        <img 
+          src="{{ file_url(images[1].entity.field_media_image.entity.uri.value) }}"
+          alt="{{ images[1].entity.field_media_image.alt }}"
+          class="rb-about__img"
+        />
+      {% endif %}
+    </div>
+  </div>
+</section>

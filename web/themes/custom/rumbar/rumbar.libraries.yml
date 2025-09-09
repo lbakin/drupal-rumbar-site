@@ -16,6 +16,10 @@ header:
     theme:
       css/components/header.css: {}
 
+about:
+  css: 
+    theme:
+      css/components/about.css: {}
 
 
 

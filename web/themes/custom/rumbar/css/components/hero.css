@@ -1,13 +1,86 @@
-.rb-hero { position: relative; min-height: 70vh; color: #faf6ef; overflow: hidden; }
-.rb-hero__bg { position: absolute; inset: 0; z-index: 0; }
-.rb-hero__image { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.02); }
-.rb-hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.7)); }
-.rb-hero__inner { position: relative; z-index: 1; width: min(1200px, 92vw); margin: 0 auto; padding: 5rem 1rem 3rem; }
-.rb-hero__kicker { letter-spacing:.12em; text-transform:uppercase; color:#e2a43d; opacity:.95; margin:0 0 .5rem; font-size:.9rem; }
-.rb-hero__title { margin:.25rem 0 .75rem; font-weight:800; font-size:clamp(2.2rem,4.6vw,4rem); line-height:1.05; text-shadow:0 2px 22px rgba(0,0,0,.45); }
-.rb-hero__sub { margin:0 0 1.25rem; max-width:62ch; font-size:clamp(1.05rem,1.4vw,1.25rem); line-height:1.6; opacity:.95; }
-.rb-hero__ctas { display:inline-flex; gap:.75rem; flex-wrap:wrap; }
-.rb-hero__ctas a { display:inline-block; padding:.9rem 1.15rem; border-radius:999px; font-weight:700; border:2px solid rgba(255,255,255,.75); color:#fff; text-decoration:none; }
-.rb-hero__ctas a:first-child { background: linear-gradient(180deg, #e2a43d, #c98b27); color:#2a1600; border-color:transparent; }
-.rb-hero__ctas a:hover { transform: translateY(-1px); transition: transform .12s ease; }
+.rb-hero {
+  position: relative;
+  min-height: 70vh;
+  color: #faf6ef;
+  overflow: hidden;
+}
 
+.rb-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.rb-hero__image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+}
+
+.rb-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .7));
+}
+
+.rb-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+  padding: 5rem 1rem 3rem;
+}
+
+.rb-hero__kicker {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #e2a43d;
+  opacity: .95;
+  margin: 0 0 .5rem;
+  font-size: .9rem;
+}
+
+.rb-hero__title {
+  margin: .25rem 0 .75rem;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
+  line-height: 1.05;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, .45);
+}
+
+.rb-hero__sub {
+  margin: 0 0 1.25rem;
+  max-width: 62ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+  opacity: .95;
+}
+
+.rb-hero__ctas {
+  display: inline-flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.rb-hero__ctas a {
+  display: inline-block;
+  padding: .9rem 1.15rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 2px solid rgba(255, 255, 255, .75);
+  color: #fff;
+  text-decoration: none;
+}
+
+.rb-hero__ctas a:first-child {
+  background: linear-gradient(180deg, #e2a43d, #c98b27);
+  color: #2a1600;
+  border-color: transparent;
+}
+
+.rb-hero__ctas a:hover {
+  transform: translateY(-1px);
+  transition: transform .12s ease;
+}

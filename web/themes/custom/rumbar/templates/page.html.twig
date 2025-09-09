@@ -1,5 +1,7 @@
 {# themes/custom/rumbar/templates/page.html.twig #}
 {{ attach_library('rumbar/header') }}
+{{ attach_library('rumbar/about') }}
+
 
 <header class="rb-header" role="banner">
   <div class="rb-branding">
@@ -15,7 +17,6 @@
   </div>
 
   <nav class="rb-nav" role="navigation" aria-label="Primary">
-    {# This renders the block you’ll place into the "Primary menu" region in the UI #}
     {{ page.primary_menu }}
   </nav>
 </header>

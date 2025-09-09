@@ -17,7 +17,7 @@
 
   <div class="rb-hero__inner container">
     {% if paragraph.field_kicker.value %}
-      <p class="rb-hero__kicker">hardcoded kicker value</p>
+      <p class="rb-hero__kicker">{{ paragraph.field_kicker.value }}</p>
     {% endif %}
 
     {% if paragraph.field_headline.value %}
